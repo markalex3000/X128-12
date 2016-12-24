@@ -23,4 +23,42 @@ int main() {
 	int jump{ 0 };
 	vector<bool> t_nums;
 	vector<int> primes;
+
+	cout << "Enter the max value: ";
+	cin >> max;
+
+	// Initialize the vector of numbers
+
+	for (int i = 0; i < max; i++)
+	{
+		t_nums.push_back(true);
+	}
+
+	// set values for i = 0 and i = 1 to false
+
+	t_nums[0] = false;
+	t_nums[1] = false;
+	
+	for (index = 2; index * index < max;) {
+		//find next prime
+		for (int i = 0; i < max;i++) {
+			if (t_nums[i] == true) {
+				jump = i;
+				index = jump;
+				break;
+			}
+		}
+		// mark multiples false
+		for (int i = index + jump ; i + jump < max; i += jump) {
+			t_nums[i] = false;
+			cout << i;
+		}
+	}
+	for (int i = 0;i < max;i++) {
+		if (t_nums[i] == true) {
+			primes.push_back(i);
+			cout << i << "\n";
+		}
+	}
+	keep_window_open();
 }
