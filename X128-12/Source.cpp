@@ -39,25 +39,35 @@ int main() {
 	t_nums[0] = false;
 	t_nums[1] = false;
 	
-	for (index = 2; index * index < max;) {
+	for (index = 1; index * index < max;) {
 		//find next prime
-		for (int i = 0; i < max;i++) {
+		for (int i = index+1; i < max;i++) {
 			if (t_nums[i] == true) {
 				jump = i;
 				index = jump;
+//				cout << "i = " << i << "\n";
+//				cout << "jump = " << jump << "\n";
+//				cout << "index = " << index << "\n";
 				break;
 			}
 		}
 		// mark multiples false
-		for (int i = index + jump ; i + jump < max; i += jump) {
+		for (int i = index + jump ; i < max; i += jump) {
 			t_nums[i] = false;
-			cout << i;
-		}
+			}
+//		for (int i = 0;i < max;i++) {
+//			if (i % 10 == 0) cout << "\n";
+//			if (t_nums[i] == true) cout << i << "\t";
+//			else cout << "XX\t";
+//		}
+//		keep_window_open();
 	}
 	for (int i = 0;i < max;i++) {
 		if (t_nums[i] == true) {
 			primes.push_back(i);
 			cout << i << "\n";
+			
+			
 		}
 	}
 	keep_window_open();
