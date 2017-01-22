@@ -74,7 +74,7 @@ int main() {
 	for (int i = 0;i < max;i++) {
 		if (t_nums[i] == true) {
 			primes.push_back(i);
-//			cout << i << " prime? "<< is_prime(i)<<"\n";
+			cout << i << " prime? "<< is_prime(i)<<"\n";
 			}
 	}
 	keep_window_open();
